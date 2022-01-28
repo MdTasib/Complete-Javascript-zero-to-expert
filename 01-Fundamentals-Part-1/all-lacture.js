@@ -54,3 +54,43 @@ console.log(typeof year);
 console.log(typeof null);
 
 */
+
+/*
+
+////////////////////////////////////
+// let, const and var
+
+// let
+let age = 19;
+age = 21;
+
+let country;
+
+// // Uncaught SyntaxError: Identifier 'job' has already been declared
+// let number = 2;
+// let number = 4;
+
+// const
+// // Uncaught TypeError: Assignment to constant variable.
+// const name = "Tasib";
+// name = "Ohidul";
+
+// // Uncaught SyntaxError: Missing initializer in const declaration
+// const country;
+
+// // Uncaught SyntaxError: Identifier 'job' has already been declared
+// const job = "Developer";
+// const job = "Programmer";
+
+// var
+var name1 = "Ohidul";
+var name1 = "Tasib";
+
+var nickName = "Tasib";
+nickName = "Ohidul";
+
+lastName = "Tasib";
+console.log(lastName);
+
+
+*/
