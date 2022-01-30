@@ -7,10 +7,10 @@ console.log(40 + 8 + 23 - 10);
 
 ////////////////////////////////////
 // Values and Variables
-console.log("Jonas");
+console.log("Tasib");
 console.log(23);
 
-let firstName = "Matilda";
+let firstName = "Rafi";
 
 console.log(firstName);
 console.log(firstName);
@@ -20,7 +20,7 @@ console.log(firstName);
 let jonas_matilda = "JM";
 let $function = 27;
 
-let person = "jonas";
+let person = "tasib";
 let PI = 3.1415;
 
 let myFirstJob = "Coder";
@@ -39,7 +39,7 @@ console.log(javascriptIsFun);
 // console.log(typeof true);
 console.log(typeof javascriptIsFun);
 // console.log(typeof 23);
-// console.log(typeof 'Jonas');
+// console.log(typeof 'tasib');
 
 javascriptIsFun = 'YES!';
 console.log(typeof javascriptIsFun);
@@ -132,8 +132,8 @@ console.log(now - 1991 > now - 2018);
 ////////////////////////////////////
 // Operator Precedence
 const now = 2037;
-const ageJonas = now - 1991;
-const ageSarah = now - 2018;
+const ageTasib = now - 1991;
+const ageRafi = now - 2018;
 
 console.log(now - 1991 > now - 2018);
 
@@ -141,23 +141,23 @@ let x, y;
 x = y = 25 - 10 - 5; // x = y = 10, x = 10
 console.log(x, y);
 
-const averageAge = (ageJonas + ageSarah) / 2;
-console.log(ageJonas, ageSarah, averageAge);
+const averageAge = (ageTasib + ageRafi) / 2;
+console.log(ageTasib, ageRafi, averageAge);
 */
 
 ////////////////////////////////////
 // Strings and Template Literals
 /*
-const firstName = 'Jonas';
+const firstName = 'tasib';
 const job = 'teacher';
 const birthYear = 1991;
 const year = 2037;
 
-const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
-console.log(jonas);
+const tasib = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+console.log(tasib);
 
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
-console.log(jonasNew);
+const tasibNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(tasibNew);
 
 console.log(`Just a regular string...`);
 
@@ -168,4 +168,27 @@ lines');
 console.log(`String
 multiple
 lines`);
+*/
+
+/*
+////////////////////////////////////
+// Taking Decisions: if / else Statements
+const age = 15;
+
+if (age >= 18) {
+  console.log('Tasib can start driving license 🚗');
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Tasib is too young. Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 2012;
+
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
 */
