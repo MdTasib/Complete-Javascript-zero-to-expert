@@ -1,4 +1,4 @@
-// assignment
+// /////////////////// Coding challenge #01 /////////////////////
 
 /*
 1. Declare variables called 'country', 'continent' and 'population' and
@@ -30,7 +30,7 @@ let language;
 // console.log(typeof country);
 // console.log(typeof language);
 
-// coding challenge 01
+// /////////////////// Coding challenge #01 /////////////////////
 
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter).
@@ -59,7 +59,7 @@ const markHigherBMI = markBMI > johnBMI;
 console.log(markHigherBMI);
 */
 
-// Coding Challenge #2
+// /////////////////// Coding challenge #02 /////////////////////
 /*
 Use the BMI example from Challenge #1, and the code you already wrote, and
 improve it.
@@ -89,3 +89,59 @@ if (markBMI > johnBMI) {
 	console.log(`Mark's BMI (${markBMI}) is lower than John's (${johnBMI})`);
 }
 */
+
+// /////////////////// Coding challenge #03 /////////////////////
+/* There are two gymnastics teams, Dolphins and Koalas. They compete against each
+other 3 times. The winner with the highest average score wins a trophy!
+Your tasks:
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition,
+and print it to the console. Don't forget that there can be a draw, so test for that
+as well (draw means they have the same average score)
+3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a
+team only wins if it has a higher score than the other team, and the same time a
+score of at least 100 points. Hint: Use a logical operator to test for minimum
+score, as well as multiple else-if blocks �
+4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when
+both teams have the same score and both have a score greater or equal 100
+points. Otherwise, no team wins the trophy
+Test data:
+§ Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+§ Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+§ Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106 */
+
+// task 01
+/* const dolphinsAvgScore = (96 + 108 + 89) / 3;
+const koalasAvgScores = (88 + 91 + 110) / 3;
+
+console.log(dolphinsAvgScore, koalasAvgScores);
+
+if (dolphinsAvgScore > koalasAvgScores) {
+	console.log("Dolphins win");
+} else if (koalasAvgScores > dolphinsAvgScore) {
+	console.log("Koalas win");
+} else if (dolphinsAvgScore === koalasAvgScores) {
+	console.log("Both win");
+}
+ */
+
+// next taks
+/* const dolphinsAvgScore = (97 + 112 + 101) / 3;
+const koalasAvgScores = (109 + 95 + 123) / 3;
+
+console.log(dolphinsAvgScore, koalasAvgScores);
+
+if (dolphinsAvgScore > koalasAvgScores && dolphinsAvgScore >= 100) {
+	console.log("Dolphins win");
+} else if (koalasAvgScores > dolphinsAvgScore && koalasAvgScores >= 100) {
+	console.log("Koalas win");
+} else if (
+	dolphinsAvgScore === koalasAvgScores &&
+	dolphinsAvgScore >= 100 &&
+	koalasAvgScores >= 100
+) {
+	console.log("Both win");
+} else {
+	console.log("No one win");
+}
+ */
