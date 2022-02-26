@@ -129,3 +129,37 @@ const ages = [
 ];
 console.log(ages);
  */
+
+//////////////////////////
+// Basic Array Operations (Methods)
+/* const friends = ["Rafi", "Rakib"];
+
+// add elements
+friends.push("Walid");
+console.log(friends);
+
+friends.unshift("Mohammad");
+console.log(friends);
+
+// remove elements
+friends.pop();
+console.log(friends);
+
+friends.shift();
+console.log(friends);
+
+// indexOf, includes
+const brothers = ["Rafi", "Rakib", "Tawrat", "Walid", "Mohammad"];
+
+console.log(brothers.indexOf("Rakib"));
+console.log(brothers.indexOf("Tanha"));
+
+console.log(brothers.includes("Rafi"));
+console.log(brothers.includes("Tasib"));
+
+if (brothers.includes("Rafi")) {
+	console.log("My brother rafi");
+}else {
+  console.log('He is not my brother')
+}
+ */
