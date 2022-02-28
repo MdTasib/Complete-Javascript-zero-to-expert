@@ -166,10 +166,10 @@ if (brothers.includes("Rafi")) {
 
 //////////////////////////////
 //Introduction to Objects
-const student = {
+/* const student = {
 	name: "Tasib",
 	age: 2022 - 2002,
 	friends: ["Rafi", "Rakib"],
 };
 
-console.log(student);
+console.log(student); */
