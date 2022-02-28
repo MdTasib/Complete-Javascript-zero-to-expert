@@ -163,3 +163,13 @@ if (brothers.includes("Rafi")) {
   console.log('He is not my brother')
 }
  */
+
+//////////////////////////////
+//Introduction to Objects
+const student = {
+	name: "Tasib",
+	age: 2022 - 2002,
+	friends: ["Rafi", "Rakib"],
+};
+
+console.log(student);
