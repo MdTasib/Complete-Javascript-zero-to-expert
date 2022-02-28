@@ -173,3 +173,28 @@ if (brothers.includes("Rafi")) {
 };
 
 console.log(student); */
+
+///////////////////////////////////////
+// Dot vs. Bracket Notation
+/* const student = {
+	name: "Tasib",
+	firstName: "Ohidul",
+	age: 2022 - 2002,
+	friends: ["Rafi", "Rakib"],
+};
+
+console.log(student.name);
+console.log(student["age"]);
+
+const nameKey = "Name";
+console.log(student["first" + nameKey]);
+
+const interestedIn = prompt("Student propraty - ");
+// console.log(student[interestedIn]);
+
+if (student[interestedIn]) {
+	console.log(student[interestedIn]);
+} else {
+	console.log("can't read propaty");
+}
+ */
