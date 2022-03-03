@@ -179,7 +179,7 @@ console.log(student); */
 /* const student = {
 	name: "Tasib",
 	firstName: "Ohidul",
-	age: 2022 - 2002,
+	age: 2022 - 2002, 
 	friends: ["Rafi", "Rakib"],
 };
 
@@ -198,3 +198,45 @@ if (student[interestedIn]) {
 	console.log("can't read propaty");
 }
  */
+
+/*
+///////////////////////////////////////
+// Object Methods
+
+const tasib = {
+  firstName: 'Ohidul',
+  lastName: 'Alam',
+  birthYeah: 1991,
+  job: 'student',
+  friends: ['Rafi', 'Rakib', 'Walid'],
+  hasDriversLicense: false,
+
+  // calcAge: function (birthYeah) {
+  //   return 2037 - birthYeah;
+  // }
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYeah;
+  // }
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYeah;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${tasib.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+  }
+};
+
+console.log(tasib.calcAge());
+
+console.log(tasib.age);
+console.log(tasib.age);
+console.log(tasib.age);
+
+// Challenge
+// "tasib is a 46-year old teacher, and he has a driver's license"
+console.log(tasib.getSummary());
+*/
