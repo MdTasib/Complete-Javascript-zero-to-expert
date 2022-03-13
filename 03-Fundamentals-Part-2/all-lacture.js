@@ -314,3 +314,29 @@ for (let i = 0; i < tasib.length; i++) {
 	console.log("breck - ", tasib[i]);
 }
  */
+
+/* // 18. Looping Backwards and Loops in Loops
+
+const tasib = [
+	"tasib",
+	19,
+	["rafi", "rakib"],
+	true,
+	{ profession: "web developer", starting: 2019 },
+	"web dev",
+	33,
+];
+
+for (let i = tasib.length - 1; i >= 0; i--) {
+	console.log(i, tasib[i]);
+}
+
+// loops in loop
+for (let i = 0; i < 3; i++) {
+	console.log("Hello - ", i);
+
+	for (let j = 0; j < 5; j++) {
+		console.log(i, "Hi - ", j);
+	}
+}
+ */
