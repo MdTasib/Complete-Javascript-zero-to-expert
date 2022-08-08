@@ -13,6 +13,6 @@ const openingHours = {
 	},
 };
 
-console.log(Object.keys(openingHours));
-console.log(Object.values(openingHours));
-console.log(Object.entries(openingHours));
+// console.log(Object.keys(openingHours));
+// console.log(Object.values(openingHours));
+// console.log(Object.entries(openingHours));
