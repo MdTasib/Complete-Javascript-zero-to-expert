@@ -39,5 +39,45 @@ book.apply(arab, example);
 
 // Another way call method use
 book.call(bangladesh, ...example);
+// console.log(bangladesh, arab);
 
-console.log(bangladesh, arab);
+// BIND METHOD
+const bookBNG = book.bind(bangladesh);
+bookBNG(33, "Tawrat");
+
+const bookARB = book.bind(arab, 222);
+bookARB("Tanha");
+
+// WITH EVENTS LISTENERS
+bangladesh.planes = 200;
+bangladesh.buyPlane = function () {
+	console.log(this);
+
+	this.planes++;
+	console.log(this.planes);
+};
+
+document
+	.querySelector(".buy")
+	.addEventListener("click", bangladesh.buyPlane.bind(bangladesh));
+
+// PARTIAL APPLICATION
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVat = addTax.bind(null, 0.23);
+// const addVat = value => value + value * 0.23;
+
+console.log(addVat(100));
+console.log(addVat(23));
+
+//
+function addTaxRate(rate) {
+	return function (value) {
+		return value + value * rate;
+	};
+}
+
+const addVat2 = addTaxRate(0.23);
+console.log(addVat2(100));
+console.log(addVat2(23));
