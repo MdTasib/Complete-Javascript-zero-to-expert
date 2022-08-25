@@ -17,3 +17,20 @@ movements.forEach(function (movement, index, arr) {
 		console.log(`You ${index + 1} withdrew ${Math.abs(movement)}`);
 	}
 });
+
+// ForEach with Maps and Sets
+const currencies = new Map([
+	["USD", "United States dollar"],
+	["EUR", "Euro"],
+	["GBP", "Pound sterling"],
+]);
+
+currencies.forEach(function (value, key, map) {
+	console.log(`${key} - ${value}`);
+});
+
+const letters = new Set(["a", "b", "c", "c", "d"]);
+letters.forEach(function (value, key, array) {
+	console.log(`${value}`);
+	console.log(`${value} ${key}`);
+});
