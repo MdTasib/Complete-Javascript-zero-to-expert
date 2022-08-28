@@ -82,9 +82,31 @@ const displayMovements = function (movements) {
 // DISPLAY TOTAL BALANCE
 const calcDisplayBalance = function (movements) {
 	const balance = movements.reduce((acc, cur) => acc + cur, 0);
-	labelBalance.textContent = `${balance} EUR`;
+	labelBalance.textContent = `${balance}€`;
 };
 calcDisplayBalance(account1.movements);
+
+// DISPLAY SUMMARY
+const calcDisplaySummary = function (movements) {
+	const incomes = movements
+		.filter(movement => movement > 0)
+		.reduce((acc, cur) => acc + cur, 0);
+
+	const out = movements
+		.filter(movement => movement < 0)
+		.reduce((acc, cur) => acc + cur, 0);
+
+	const interest = movements
+		.filter(movement => movement > 0)
+		.map(deposit => (deposit * 1.2) / 100)
+		.filter(int => int >= 1)
+		.reduce((acc, cur) => acc + cur, 0);
+
+	labelSumIn.textContent = `${incomes}€`;
+	labelSumOut.textContent = `${Math.abs(out)}€`;
+	labelSumInterest.textContent = `${interest}€`;
+};
+calcDisplaySummary(account1.movements);
 
 // CREATE USER NAME FUNCTION. LIKE THIS FORMAT: Ohidul Alam Tasib -> (oat)
 const createUsernames = function (accounts) {
