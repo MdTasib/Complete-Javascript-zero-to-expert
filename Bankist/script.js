@@ -79,6 +79,14 @@ const displayMovements = function (movements) {
 	});
 };
 
+// DISPLAY TOTAL BALANCE
+const calcDisplayBalance = function (movements) {
+	const balance = movements.reduce((acc, cur) => acc + cur, 0);
+	labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+// CREATE USER NAME FUNCTION. LIKE THIS FORMAT: Ohidul Alam Tasib -> (oat)
 const createUsernames = function (accounts) {
 	accounts.forEach(acc => {
 		acc.username = acc.owner
@@ -88,8 +96,6 @@ const createUsernames = function (accounts) {
 			.join("");
 	});
 };
-
 createUsernames(accounts);
-console.log(accounts);
 
 displayMovements(account1.movements);
