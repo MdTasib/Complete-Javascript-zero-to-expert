@@ -84,21 +84,20 @@ const calcDisplayBalance = function (movements) {
 	const balance = movements.reduce((acc, cur) => acc + cur, 0);
 	labelBalance.textContent = `${balance}€`;
 };
-calcDisplayBalance(account1.movements);
 
 // DISPLAY SUMMARY
-const calcDisplaySummary = function (movements) {
-	const incomes = movements
+const calcDisplaySummary = function (acc) {
+	const incomes = acc.movements
 		.filter(movement => movement > 0)
 		.reduce((acc, cur) => acc + cur, 0);
 
-	const out = movements
+	const out = acc.movements
 		.filter(movement => movement < 0)
 		.reduce((acc, cur) => acc + cur, 0);
 
-	const interest = movements
+	const interest = acc.movements
 		.filter(movement => movement > 0)
-		.map(deposit => (deposit * 1.2) / 100)
+		.map(deposit => (deposit * acc.interestRate) / 100)
 		.filter(int => int >= 1)
 		.reduce((acc, cur) => acc + cur, 0);
 
@@ -106,7 +105,6 @@ const calcDisplaySummary = function (movements) {
 	labelSumOut.textContent = `${Math.abs(out)}€`;
 	labelSumInterest.textContent = `${interest}€`;
 };
-calcDisplaySummary(account1.movements);
 
 // CREATE USER NAME FUNCTION. LIKE THIS FORMAT: Ohidul Alam Tasib -> (oat)
 const createUsernames = function (accounts) {
@@ -120,4 +118,34 @@ const createUsernames = function (accounts) {
 };
 createUsernames(accounts);
 
-displayMovements(account1.movements);
+// Login Event Handler
+let currentAccount;
+
+btnLogin.addEventListener("click", function (e) {
+	e.preventDefault();
+
+	currentAccount = accounts.find(
+		account => account.username === inputLoginUsername.value
+	);
+
+	if (currentAccount?.pin === Number(inputLoginPin.value)) {
+		// DISPALY UI & MESSAGE
+		labelWelcome.textContent = `Welcome back, ${
+			currentAccount.owner.split(" ")[0]
+		}`;
+		containerApp.style.opacity = 100;
+
+		// Clear input fileds
+		inputLoginUsername.value = inputLoginPin.value = "";
+		inputLoginPin.blur();
+
+		// DISPLAY MOVEMENTS
+		displayMovements(currentAccount.movements);
+
+		// DISPLAY BALANCE
+		calcDisplayBalance(currentAccount.movements);
+
+		// DISPLAY SUMMARY
+		calcDisplaySummary(currentAccount);
+	}
+});
