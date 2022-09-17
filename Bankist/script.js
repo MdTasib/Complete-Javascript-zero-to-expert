@@ -106,6 +106,18 @@ const calcDisplaySummary = function (acc) {
 	labelSumInterest.textContent = `${interest}€`;
 };
 
+// UPDATE UI
+const updateUI = function (acc) {
+	// DISPLAY MOVEMENTS
+	displayMovements(acc.movements);
+
+	// DISPLAY BALANCE
+	calcDisplayBalance(acc);
+
+	// DISPLAY SUMMARY
+	calcDisplaySummary(acc);
+};
+
 // CREATE USER NAME FUNCTION. LIKE THIS FORMAT: Ohidul Alam Tasib -> (oat)
 const createUsernames = function (accounts) {
 	accounts.forEach(acc => {
@@ -139,14 +151,8 @@ btnLogin.addEventListener("click", function (e) {
 		inputLoginUsername.value = inputLoginPin.value = "";
 		inputLoginPin.blur();
 
-		// DISPLAY MOVEMENTS
-		displayMovements(currentAccount.movements);
-
-		// DISPLAY BALANCE
-		calcDisplayBalance(currentAccount);
-
-		// DISPLAY SUMMARY
-		calcDisplaySummary(currentAccount);
+		// UPDATE UI
+		updateUI(currentAccount);
 	}
 });
 
@@ -158,5 +164,19 @@ btnTransfer.addEventListener("click", function (e) {
 	const receiverAcc = accounts.find(
 		acc => acc.username === inputTransferTo.value
 	);
-	console.log(amount, receiverAcc);
+
+	inputTransferAmount.value = inputTransferTo.value = "";
+
+	if (
+		amount > 0 &&
+		receiverAcc &&
+		currentAccount.balance >= amount &&
+		receiverAcc?.username !== currentAccount.username
+	) {
+		// DOING THE TRANSFER
+		currentAccount.movements.push(-amount);
+		receiverAcc.movements.push(amount);
+		// UPDATE UI
+		updateUI(currentAccount);
+	}
 });
