@@ -80,9 +80,9 @@ const displayMovements = function (movements) {
 };
 
 // DISPLAY TOTAL BALANCE
-const calcDisplayBalance = function (movements) {
-	const balance = movements.reduce((acc, cur) => acc + cur, 0);
-	labelBalance.textContent = `${balance}€`;
+const calcDisplayBalance = function (acc) {
+	acc.balance = acc.movements.reduce((acc, cur) => acc + cur, 0);
+	labelBalance.textContent = `${acc.balance}€`;
 };
 
 // DISPLAY SUMMARY
@@ -143,7 +143,7 @@ btnLogin.addEventListener("click", function (e) {
 		displayMovements(currentAccount.movements);
 
 		// DISPLAY BALANCE
-		calcDisplayBalance(currentAccount.movements);
+		calcDisplayBalance(currentAccount);
 
 		// DISPLAY SUMMARY
 		calcDisplaySummary(currentAccount);
