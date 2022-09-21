@@ -180,3 +180,25 @@ btnTransfer.addEventListener("click", function (e) {
 		updateUI(currentAccount);
 	}
 });
+
+// CLOSE ACCOUNT
+btnClose.addEventListener("click", function (e) {
+	e.preventDefault();
+
+	if (
+		inputCloseUsername.value === currentAccount.username &&
+		Number(inputClosePin.value) === currentAccount.pin
+	) {
+		const index = accounts.findIndex(
+			acc => acc.username === currentAccount.username
+		);
+
+		// DELETE ACCOUNT
+		accounts.splice(index, 1);
+
+		// HIDE UI
+		containerApp.style.opacity = 0;
+	}
+
+	inputCloseUsername.value = inputClosePin.value = "";
+});
